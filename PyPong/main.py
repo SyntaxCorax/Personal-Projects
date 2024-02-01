@@ -91,6 +91,7 @@ def show_welcome_screen():
     screen.blit(welcome_text, welcome_text_rect)
     screen.blit(welcome_text2, welcome_text2_rect)
     pygame.display.flip()
+    
 def draw_color_selection(player_number):
     # Draw color selection screen for the given player
     screen.fill((0, 0, 0))
@@ -101,6 +102,7 @@ def draw_color_selection(player_number):
     for i, color in enumerate(PLAYER_COLOR_OPTIONS):
         rect_position_y = SCREEN_HEIGHT // 2 - 30
         pygame.draw.rect(screen, color, (SCREEN_WIDTH // 4 + 20 + i * 100, rect_position_y, 100, 100), 0, 15)
+        
 def choose_color(player_number):
     global player1_color, player2_color
     while (player_number == 1 and player1_color is None) or (player_number == 2 and player2_color is None):
@@ -139,6 +141,7 @@ def start_menu():
             ball_speed_y_init = random.uniform(-.2, .2) * BALL_SPEED
             break  # Exit the loop when SPACE is pressed
     return ball_speed_x_init, ball_speed_y_init
+    
 def check_exit_events():
     for user_event in pygame.event.get():
         if user_event.type == pygame.QUIT:
@@ -147,6 +150,7 @@ def check_exit_events():
         elif user_event.type == pygame.KEYDOWN and user_event.key == pygame.K_ESCAPE:
             pygame.quit()
             sys.exit()
+            
 def clamp_player_position(y_position):
     # Ensure the player's position is within bounds
     if y_position < 42:
@@ -225,6 +229,7 @@ def move_players():
         player_y -= player2_speed
     if user_keys[pygame.K_s] and player_y < SCREEN_HEIGHT - PLAYER_HEIGHT:
         player_y += player2_speed
+        
 def handle_collisions():
     global ball_x, ball_y, ball_speed_x, ball_speed_y, player_x, player_y, player2_x, player2_y, ball_color, player1_color, player2_color
 
