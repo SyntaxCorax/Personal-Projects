@@ -84,9 +84,9 @@ def initialize_game():
 def show_welcome_screen():
     welcome_font = pygame.freetype.SysFont('lato-regular', 60, True)
     welcome_font2 = pygame.freetype.SysFont('lato-regular', 30, True)
-    welcome_text, _ = welcome_font.render("Welcome to PyPong!", (255, 255, 255))
+    welcome_text, _ = welcome_font.render("Welcome to Bounce Battle!", (255, 255, 255))
     welcome_text_rect = welcome_text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 - 50))
-    welcome_text2, _ = welcome_font2.render("A simple Pong game", (255, 255, 255))
+    welcome_text2, _ = welcome_font2.render("A game by Isaac Bruner", (255, 255, 255))
     welcome_text2_rect = welcome_text2.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 50))
     screen.blit(welcome_text, welcome_text_rect)
     screen.blit(welcome_text2, welcome_text2_rect)
